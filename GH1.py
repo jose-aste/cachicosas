@@ -4,6 +4,25 @@ print('\nPara jugar, elegir un elemento: piedra, papel, tijera, lagartija, o spo
 
 compu_l = ['piedra','papel', 'tijera','lagartija', 'spock']
 
+papel = ["-", 1, 2, 1, 2]
+
+piedra = [2, "-", 1, 2, 1]
+
+lagartija = [1, 2, "-", 1, 2]
+
+spock = [2, 1, 2, "-", 1]
+
+tijera = [1, 2, 1, 2, "-"]
+
+listas = [papel, piedra, lagartija, spock, tijera]
+
+def jugada(jugador, computador):
+    if listas[jugador][computador] ==1:
+        return "Ganaste!"
+    elif listas[jugador][computador] == "-":
+        return "Es un empate!"  
+    else:
+        return "Perdiste :(" 
 
 jugar = True
 while jugar == True:
