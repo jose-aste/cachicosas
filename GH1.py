@@ -4,40 +4,40 @@ print('\nPara jugar, elegir un elemento: piedra, papel, tijera, lagartija, o spo
 
 compu_l = ['piedra','papel', 'tijera','lagartija', 'spock']
 
-jugador = input('Anotar elemento aquí: ').lower()
-while jugador not in compu_l:
-    jugador = input('Eso no es un elemento. Anotar elemento aquí: ').lower()
+papel = ["-", 1, 2, 1, 2]
 
-rando = randint(0, 4)
-compu = compu_l[rando]
+piedra = [2, "-", 1, 2, 1]
 
+lagartija = [1, 2, "-", 1, 2]
 
-print('\nEl computador tiro', compu,'\n')
+spock = [2, 1, 2, "-", 1]
 
-if jugador == compu:
-    print("¡Empataron!")
-elif jugador == 'piedra':
-    if compu == 'papel' or compu == 'spock':
-        print('¡Perdiste!', compu, 'vence a', jugador)
+tijera = [1, 2, 1, 2, "-"]
+
+listas = [papel, piedra, lagartija, spock, tijera]
+
+def jugada(jugador, computador):
+    if listas[jugador][computador] ==1:
+        return "Ganaste!"
+    elif listas[jugador][computador] == "-":
+        return "Es un empate!"  
     else:
-        print('¡Ganaste!', jugador, 'vence a', compu)
-elif jugador == 'papel':
-    if compu == 'tijera' or compu == 'lagartija':
-        print('¡Perdiste!', compu, 'vence a', jugador)
-    else:
-        print('¡Ganaste!', jugador, 'vence a', compu)
-elif jugador == 'tijera':
-    if compu == 'spock' or compu == 'piedra':
-        print('¡Perdiste!', compu, 'vence a', jugador)
-    else:
-        print('¡Ganaste!', jugador, 'vence a', compu)
-elif jugador == 'lagartija':
-    if compu == 'tijera' or compu == 'piedra':
-        print('¡Perdiste!', compu, 'vence a', jugador)
-    else:
-        print('¡Ganaste!', jugador, 'vence a', compu)
-else: #spocvk
-    if compu == 'papel' or compu == 'lagartija':
-        print('¡Perdiste!', compu, 'vence a', jugador)
-    else:
-        print('¡Ganaste!', jugador, 'vence a', compu)
+        return "Perdiste :(" 
+
+jugar = True
+while jugar == True:
+    jugador = input('Anotar elemento aquí: ').lower()
+    while jugador not in compu_l:
+        jugador = input('Eso no es un elemento. Anotar elemento aquí: ').lower()
+
+    rando = randint(0, 4)
+    pri = compu_l[rando]
+    jug = compu_l.index(jugador)
+    print('El computador tiro',pri)
+    print(jugada(jug,rando))
+    print("Quieres volver a jugar?")
+    print("1. Sí!!")
+    print("2. No :(")
+    seguir = input()
+    if seguir == "2":
+        jugar = False
