@@ -32,5 +32,9 @@ while jugar == True:
 
     rando = randint(0, 4)
     compu = compu_l[rando]
-    jugar = False
-    #por mientras nomas
+    print("Quieres volver a jugar?")
+    print("1. Sí!!")
+    print("2. No :(")
+    seguir = input()
+    if seguir == "2":
+        jugar = False
