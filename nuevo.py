@@ -1,3 +1,0 @@
-#miau 
-def pasear():
-    pass
