@@ -51,6 +51,13 @@ while jugar == True:
     jug = int(compu_l.index(jugador))
 
     print(jugada(jug,rando))
+    if jugada(jug,rando) == "Ganaste!":
+        puntaje_jugador += 1   
+    elif jugada(jug,rando) == "Perdiste :(":
+        puntaje_computador += 1
+    print
+    ('Puntaje jugador:',puntaje_jugador)
+    print('Puntaje computador:',puntaje_computador)
     print("Quieres volver a jugar?")
     print("1. Sí!!")
     print("2. No :(")
