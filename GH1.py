@@ -2,7 +2,7 @@
 from random import randint
 print('\nPara jugar, elegir un elemento: piedra, papel, tijera, lagartija, o spock\n')
 
-compu_l = ['piedra','papel', 'tijera','lagartija', 'spock']
+compu_l = ['papel','piedra', 'lagartija','spock','tijera']
 
 papel = ["-", 1, 2, 1, 2]
 
@@ -45,14 +45,10 @@ while jugar == True:
         jugador = 3
 
     rando = randint(0, 4)
-    print("La computadora eligió: " + compu_l[rando])
-    print(jugada(jugador, rando))
-    if jugada(jugador, rando) == "Ganaste!":
-        puntaje_jugador += 1
-    elif jugada(jugador, rando) == "Perdiste :(":
-        puntaje_computador += 1
-    print("Tu puntaje es: " + str(puntaje_jugador))
-    print("El puntaje de la computadora es: " + str(puntaje_computador))
+    print('El computador tiro',compu_l[rando])
+    jug = int(compu_l.index(jugador))
+
+    print(jugada(jug,rando))
     print("Quieres volver a jugar?")
     print("1. Sí!!")
     print("2. No :(")
