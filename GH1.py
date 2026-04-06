@@ -28,6 +28,8 @@ def jugada(jugador, computador):
         return "Perdiste :(" 
 
 
+#brqnch?
+
 jugar = True
 while jugar == True:
     jugador = input('Anotar elemento aquí: ').lower()
